@@ -24,8 +24,7 @@
                     </div>
                 @endif
 
-
-                <p><strong>API Endpoint:</strong> <code>{{ url('/api/short?url=https://xyz.com'.($apiKey->key ? '&api_key=' . $apiKey->key : 'XXXXXXXXXX')) }}</code></p>
+                <p><strong>API Endpoint:</strong> <code>{{ url('/api/short?url=https://xyz.com' . (!empty($apiKey->key) ? '&api_key=' . $apiKey->key : 'XXXXXXXXXX')) }}</code></p>
                 <p><strong>Note:</strong> Use the API key in your requests. You can shorten URLs by making GET or POST
                     requests to the above endpoint.</p>
 
